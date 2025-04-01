@@ -1,98 +1,82 @@
 # IS477 Final Project Plan  
-**Team Name:** GROUP33  
-**Members:** Max Zhang Yiang Xu
+**Group:** GROUP 33  
+**Members:** Max Zhang, Yiang Xu
 
 ---
 
-## ? Project Title  
-**Exploring Patterns and Performance in Formula 1: A Data-Driven Analysis of Racing Outcomes**
+## Project Title  
+**Speed vs. Climate: Investigating the Impact of Weather Anomalies on Formula 1 Race Outcomes**
 
 ---
 
-## 1. ? Research Question(s)
+## 1. Overview
 
-We aim to explore the following questions using Formula 1 datasets:
-
-- What performance trends can be observed for drivers and constructors across F1 seasons?
-- How do factors like pit stop timing, qualifying positions, or circuit type influence race outcomes?
-- How can programmatic data acquisition and integration be used to build an end-to-end motorsport analytics pipeline?
+Our project aims to explore how yearly variations in global climate conditions relate to performance patterns in Formula 1 racing. As casual ordinary drivers, we know driving is heavily influenced by not only the weather (heavy rain, snow, etc.), but also the temperature (midwest winter isn't the most friendly for cars). We're curious to explore how these external factors might impact the top of the "driving foodchain", which is Formula One championships.
 
 ---
 
-## 2. ? Data Sources
+## 2. Research Question(s)
 
-### Dataset 1: Ergast Developer API
-- **Source**: [https://ergast.com/mrd](https://ergast.com/mrd)
-- **Method**: JSON-based public API
-- **Data**: Race results, pit stops, lap times, qualifying, driver and constructor data
-- **Accessed via**: `scripts/f1_scraper.py`
-- **License**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-
-### Dataset 2: [Insert Second F1 Dataset]
-_(examples below ¡ª to be finalized by your group)_
-- **Source**: e.g., Kaggle F1 Telemetry Dataset, Weather API, or Circuit Info CSV
-- **Method**: [API / Manual Download / Scraped]
-- **Data**: [Telemetry | weather | tire strategy | team radio | etc.]
-- **License**: [To be documented]
-- **Accessed via**: `scripts/f1_data_merge.py` or similar
+- Does global precipitation or temperature anomaly correlate with average driver outcomes in Formula 1 races?
+- Are certain years with more extreme weather conditions associated with increased DNFs (did-not-finish) or reduced average finishing positions?
 
 ---
 
-## 3. ?? Planned Data Integration & Cleaning
+## 3. Team
 
-- **Ergast API**: Normalize and clean JSON outputs into structured CSVs (drivers, races, pit stops, results)
-- **Second Dataset**: Match by shared keys like `season`, `round`, `driverId`, or `circuitId`
-- **Final Dataset**: Merge into a single race-level or driver-level frame for analysis
-
----
-
-## 4. ? Planned Analysis & Visualization
-
-| Focus        | Examples |
-|--------------|----------|
-| Drivers      | Win rates, fastest laps, qualifying vs. finishing position |
-| Constructors | Season standings, podium finishes, consistency |
-| Strategy     | Pit stop timing impact, tire degradation (if available) |
-| Visualization | Line plots, scatter plots, bar charts, animated lap-by-lap leaderboards |
+| Member     | Responsibility                      |
+|------------|--------------------------------------|
+| Max Zhang  | Ergast API data extraction, cleaning |
+| Yiang Xu   | NOAA weather scraping + merging      |
+| Both       | Visualizations, analysis, final report|
 
 ---
 
-## 5. ? Automation & Reproducibility
+## 4. Datasets
 
-- API scraping (Ergast): `scripts/f1_scraper.py`
-- Data wrangling & merging: `scripts/data_cleaner.py`
-- Visualization notebooks: `notebooks/analysis.ipynb`
-- Raw data not stored in repo (`.gitignore` enforced)
-- Optional checksums or metadata log
+### Dataset 1: Formula 1 Race Results (2010â€“2023)
+- **Source**: [Ergast Developer API](https://ergast.com/mrd)
+- **Format**: JSON retrieved (original format) and flattened to CSV for ease of analysis
+- **Script**: `scripts/ergastAPIscraper.py`
+- **Columns**: season, round, race_name, driver_id, position, grid, laps, status, fastest lap, etc.
+- **License**: Creative Commons Attribution 4.0
 
----
-
-## 6. ? Timeline
-
-| Week | Task |
-|------|------|
-| Week 11 | Select second dataset, finalize RQ |
-| Week 12 | Implement and test API scraper |
-| Week 13 | Clean and merge both datasets |
-| Week 14 | Analysis + visualizations |
-| Week 15 | Final report and presentation prep |
+### Dataset 2: Global Weather Anomalies (2010â€“2023)
+- **Source**: [NOAA Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series)
+- **Format**: CSV
+- **Script**: `scripts/weatherdatascraper.py`
+- **Columns**: Year, temperature anomaly (Â°C), yearly precipitation (mm)
+- **License**: U.S. Government Public Data (no restrictions)
 
 ---
 
-## 7. ? Division of Work
+## 5. Timeline
 
-| Member | Responsibility |
-|--------|----------------|
-| [Name] | Ergast API scraper |
-| [Name] | Second dataset acquisition & cleaning |
-| [Name] | EDA and visualizations |
-| All    | Question design, integration, presentation |
+| Week | Task                                  |
+|------|---------------------------------------|
+| 11   | Finalize question + data sources      |
+| 12   | Implement data scraping + merging     |
+| 13   | Clean + analyze datasets, documentation of data integrity and quality issues              |
+| 14   | Visualizations + draft analysis       |
+| 15   | Finalize report, presentation, reproducibility packaging, and metadata   |
+
+---
+
+## 6. Reproducibility
+
+- All datasets are acquired at runtime via:
+  - `weatherdatascraper.py`
+  - `ergastAPIscraper.py`
+- `.gitignore` prevents data files from being committed
+- Scripts ensure reproducible downloads and consistent file formats
 
 ---
 
-## 8. ? References
+## 7. References
 
-- Ergast API: https://ergast.com/mrd
-- [Second dataset reference or link here]
+- Ergast Developer API: https://ergast.com/mrd
+- NOAA Climate at a Glance: https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/
+- NOAA GSOTY Data: https://www.ncei.noaa.gov/access/search/data-search/global-summary-of-the-year
 
 ---
+
