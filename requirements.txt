@@ -1,4 +1,5 @@
 pandas
 requests
-os
-pathlib
+scikit-learn
+numpy
+matplotlib
