@@ -1,24 +1,22 @@
 # IS477 Final Project Status Report  
 **Team:** GROUP33  
 **Members:** Max Zhang, Yiang Xu  
-**Tag:** `status-report`  
-**Submitted via GitHub Release**
 
 ---
 
-## 1. Task-by-Task Project Plan Updates
+## 1. Update on Each Task based on Timeline
 
 ### Week 11: Finalize Research Question + Data Sources ✅ Completed
 
-We began by identifying two core datasets:
+We began identified two final datasets:
 - **Formula 1 race results (2010–2023)**, retrieved from the Ergast Developer API using `ergastAPIscraper.py`
 - **Global yearly weather anomalies**, including temperature and precipitation data from NOAA’s Climate at a Glance portal, retrieved using `weatherdatascraper.py`
 
-We initially proposed analyzing the relationship between global climate conditions and racing outcomes. As we explored the richness of the F1 data, we expanded our scope to include **performance-based questions**, such as:
+We initially wanted to analyze the relationship between global climate conditions and racing outcomes. But later we expanded our scope to include **performance-based questions** too such as:
 - Who are the most consistent or dominant drivers over the years?
 - Can we model which constructor or driver would win a championship using historical trends?
 
-This expansion aligns with our dataset’s strengths while still satisfying the original climate-performance hypothesis.
+These new research questions aligns with the dataset’s strengths while still keeping the original climate-performance hypothesis.
 
 ---
 
@@ -40,7 +38,7 @@ Artifacts:
 
 ### Week 13: Data Cleaning, Integrity Checks, and Feature Construction ✅ Completed
 
-All cleaning and integrity work is recorded in the [`datawrangling.ipynb`](datawrangling.ipynb) file. Key steps include:
+All cleaning and integrity work is recorded in the [`datawrangling.ipynb`]file. Key steps include:
 
 #### Integrity Checks
 - Duplicate entries: None
@@ -48,7 +46,7 @@ All cleaning and integrity work is recorded in the [`datawrangling.ipynb`](dataw
   - These are mostly from DNFs or lapped drivers, which we flag but don’t drop.
 
 #### Time Parsing
-- Converted `time` column (race completion time or gap) into `race_time` (absolute) using custom parsing logic
+- Converted `time` column (race completion time or gap) into `race_time` (absolute) using parsing logic. This is because originally, only the first place finish's time is recorded normally, and all other participants have their time recorded as seconds after the first place finish. (which is harder to analyze and interpret)
 - Derived `race_time_seconds` to enable quantitative comparisons
 
 #### Feature Engineering
@@ -67,12 +65,12 @@ Artifacts:
 
 ### Week 14: Visualization and Preliminary Analysis 🟡 In Progress
 
-We’ve begun visualizing exploratory metrics:
+We’ve begun some prelim visualization mainly to just learn and see potential trends in data better:
 
-- 📊 **Winning Constructors by Season**: Bar chart showing who dominates each year
-- 🏁 **Best Driver by Circuit**: Bar chart visualizing who has the most wins per track
-- 🕑 **Seasonal Average Lap Time**: Time series showing how race pace has changed over time
-- 🔍 **Faster Difference Metric**: Drivers with smallest gap between fastest lap and average lap — a proxy for consistency
+- **Winning Constructors by Season**: Bar chart showing who dominates each year
+- **Best Driver by Circuit**: Bar chart visualizing who has the most wins per track
+- **Seasonal Average Lap Time**: Time series showing how race pace has changed over time
+- **Faster Difference Metric**: Drivers with smallest gap between fastest lap and average lap — a proxy for consistency
 
 These provide solid insight into driver and team dominance, performance variability, and track trends. We're now working on:
 - Correlating `faster_difference` and `avg_lap_time` with yearly `temp_anomaly_C` and `precip_mm`
@@ -84,9 +82,11 @@ Artifacts:
 
 ---
 
-### Week 15: Final Report, Reproducibility, and Presentation ⏳ Upcoming
+### Week 15: Final Report, Reproducibility, and Presentation  
 
-Tasks for next week include:
+This is planned for next 2 weeks.
+
+Tasks include:
 - Writing final interpretation of visualizations
 - Packaging all scripts into a `make` or `.sh` pipeline
 - Completing `README.md` with full instructions
@@ -122,12 +122,3 @@ Tasks for next week include:
 - Clean up missing lap time entries with custom imputation or exclusion rules
 
 ---
-
-## 4. Summary & Submission
-
-We’ve made steady progress on all core project phases. Our notebook reflects a mature pipeline for F1 performance analytics, and our merged NOAA dataset gives us a secondary angle to investigate.
-
-Next steps: complete final analysis, polish visualizations, package the codebase, and prepare for final submission in Week 15.
-
-📝 Submitted as GitHub Release tagged `status-report`.
-
