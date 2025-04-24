@@ -8,7 +8,7 @@
 
 ### Week 11: Finalize Research Question + Data Sources ✅ Completed
 
-We began identified two final datasets:
+We identified two final datasets:
 - **Formula 1 race results (2010–2023)**, retrieved from the Ergast Developer API using `ergastAPIscraper.py`
 - **Global yearly weather anomalies**, including temperature and precipitation data from NOAA’s Climate at a Glance portal, retrieved using `weatherdatascraper.py`
 
