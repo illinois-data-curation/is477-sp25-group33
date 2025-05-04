@@ -2,7 +2,7 @@
 Github Archival Record: https://github.com/illinois-data-curation/is477-sp25-group33/releases/tag/Temporary_Final_Release
 **Contributors:** William Xu, Max Zhang
 
-##1.Summary
+## 1.Summary
 
 Our project aims to explore how yearly variations in global climate conditions relate to performance patterns in Formula 1 racing. Formula 1 fascinates us precisely because it’s a symphony of engineering brilliance and human reflex: the split‑second timing in the pits, the constant tweaks in aerodynamic packages, and the relentless data analysis unfolding in the garage while drivers fight for tenths of a second on track. Every regulation change brings new unknowns, and every venue — from the damp elevation of São Paulo to the desert night of Abu Dhabi — layers fresh complexity onto strategy. By investigating weather and climate alongside race results we aim to spotlight an often‑mentioned but rarely quantified variable: how much do Mother Nature’s mood swings tilt the battlefield?We're curious to explore how these external factors might impact the top of the "driving foodchain", which is Formula One championships.We are motivated by the intensity and excitement of Formula One and the exquisite cooperation between the engineering team and the drivers. We like the mechanical design and the constantly innovative aerodynamic system of these cars, which makes the championship always full of unknowns. We want to judge the impact of weather on the championship through the drivers' race records and the historical level of the team's vehicles, the performance of different tracks and countries.
 
