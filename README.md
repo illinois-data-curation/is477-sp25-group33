@@ -18,9 +18,17 @@ I explored Formula 1 race results from 2010 to 2023, focusing on how different c
 - **Columns**: season, round, race_name, driver_id, position, grid, laps, status, fastest lap, etc.
 - **License**: Creative Commons Attribution 4.0
 
+This dataset is a lap‑by‑lap ledger of the modern Formula 1 era, pulled directly from the Ergast Developer API with our helper script scripts/ergastAPIscraper.py. The scraper pages through every championship round from 2010 to 2023, flattens the nested JSON, and exports a UTF‑8 CSV so you can drop it straight into wordbook.
+
+Each row represents one driver in one Grand Prix. Key calendar fields—season, round, and race_name—let you slice by year or circuit in a single line of code. Competitive variables (position, grid, laps, milliseconds, fastestLapTime) support everything from simple podium counts to regression models of grid‑vs‑finish performance. Context columns such as constructor_id and status (Finished, Accident, Engine, etc.) enable reliability studies or DNF clustering, while fields like points and driver_id join seamlessly to external tables for richer analytics.
+
+We performs a basic data cleaning in datawrangling.ipynb: it coerces numeric types, drops abandoned events that lack a classified order, and normalises camel‑case keys into snake‑case for stylistic consistency. All timestamps are standardised to UTC, eliminating cross‑platform timezone headaches. We perform an column transfer for those time columns with object type into calculable numerical columns representing different lab time feature.  At 14 seasons and roughly 300–400 rows per race year, the file strikes a balance between granularity and manageability—dense enough for machine‑learning pipelines, yet small enough for interactive notebooks. This data Ergast feed is licensed under Creative Commons BY 4.0.
+
 ### Dataset 2: Global Weather Anomalies (2010–2023)
 - **Source**: [NOAA Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series)
 - **Format**: CSV
 - **Script**: `scripts/weatherdatascraper.py`
 - **Columns**: Year, temperature anomaly (°C), yearly precipitation (mm)
 - **License**: U.S. Government Public Data (no restrictions)
+
+This dataset sourced via NOAA’s “Climate at a Glance” interface and downloaded through scripts/weatherdatascraper.py, this CSV distils sprawling meteorological archives into a compact panel of annual climate signals. Each observation represents one calendar year of globally averaged conditions, giving just 14 tidy rows—ideal for high‑level correlation with season‑aggregated F1 metrics. The headline feature, temperature_anomaly, expresses the departure (in °C) from the 20th‑century baseline, allowing you to trace the recent acceleration of warming with a single column. A companion measure, yearly_precipitation, records total global land‑and‑ocean precipitation (mm) and lets you test hypotheses about grip levels or race interruptions on especially wet seasons. These two variables are intentionally minimalist: they act as macro “climate mood” factors rather than local track‑day forecasts, so they pair cleanly with Formula 1 data that is itself aggregated over a season.
