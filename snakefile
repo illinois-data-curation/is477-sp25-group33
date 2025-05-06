@@ -1,36 +1,42 @@
 rule all:
     input:
-        "results/analysis_complete.txt"
+        "results/weather_vs_outcome.png",
+        "results/constructor_win_byseason.png",
+        "results/consistency_vs_averagePlacing.png",
+        "results/best_avg_position_by_circuit.png",
+        "results/time_series_Trend.png"
 
 rule scrape_ergast:
     output:
-        touch("results/ergast_scraped.txt")
+        "data/f1_race_results_2010_2023.csv"
     shell:
-        "python3 scripts/ergastAPIscraper.py && touch {output}"
+        "python3 scripts/ergastAPIscraper.py"
 
 rule scrape_weather:
     output:
-        touch("results/weather_scraped.txt")
+        "data/global_weather_2010_2023.csv"
     shell:
-        "python3 scripts/weatherdatascraper.py && touch {output}"
+        "python3 scripts/weatherdatascraper.py"
 
 rule wrangle_data:
     input:
-        "results/ergast_scraped.txt",
-        "results/weather_scraped.txt"
+        "data/f1_race_results_2010_2023.csv",
+        "data/global_weather_2010_2023.csv"
     output:
-        notebook="notebooks/datawrangling_done.ipynb"
+        "data/f1_data_cleaned.csv"
     shell:
-        "jupyter nbconvert --to notebook --execute notebooks/datawrangling.ipynb --output {output.notebook}"
+        # The notebook must save the cleaned CSV to data/f1_data_cleaned.csv
+        "jupyter nbconvert --to notebook --execute notebooks/datawrangling.ipynb --output-dir notebooks"
 
 rule analyze_data:
     input:
-        "notebooks/datawrangling_done.ipynb"
+        "data/f1_data_cleaned.csv"
     output:
-        notebook="notebooks/analysis_done.ipynb",
-        flag="results/analysis_complete.txt"
+        "results/weather_vs_outcome.png",
+        "results/constructor_win_byseason.png",
+        "results/consistency_vs_averagePlacing.png",
+        "results/best_avg_position_by_circuit.png",
+        "results/time_series_Trend.png"
     shell:
-        """
-        jupyter nbconvert --to notebook --execute notebooks/analysis.ipynb --output {output.notebook}
-        touch {output.flag}
-        """
+        # The notebook must save all PNGs to results/ as part of its code
+        "jupyter nbconvert --to notebook --execute notebooks/analysis.ipynb --output-dir notebooks"
