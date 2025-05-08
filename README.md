@@ -123,4 +123,13 @@ If you are unable to run the full workflow or want to view the outputs directly:
   National Centers for Environmental Information (NCEI), NOAA. Climate at a Glance: Global Time Series. [https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series)  
   License: U.S. Government Public Domain
 
+### Software & Libraries
+- **Python**: Python Software Foundation. Python Language Reference, version 3.11.1 [https://www.python.org/](https://www.python.org/)
+- **Pandas**: The pandas development team. pandas-dev/pandas: Pandas. Zenodo. [https://doi.org/10.5281/zenodo.3509134](https://doi.org/10.5281/zenodo.3509134)
+- **NumPy**: Harris, C. R., et al. (2020). Array programming with NumPy. Nature, 585(7825), 357-362. [https://doi.org/10.1038/s41586-020-2649-2](https://doi.org/10.1038/s41586-020-2649-2)
+- **Matplotlib**: Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95. [https://doi.org/10.1109/MCSE.2007.55](https://doi.org/10.1109/MCSE.2007.55)
+- **Seaborn**: Waskom, M. L. (2021). seaborn: statistical data visualization. Journal of Open Source Software, 6(60), 3021. [https://doi.org/10.21105/joss.03021](https://doi.org/10.21105/joss.03021)
+- **scikit-learn**: Pedregosa, F., et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research, 12, 2825-2830. [https://jmlr.org/papers/v12/pedregosa11a.html](https://jmlr.org/papers/v12/pedregosa11a.html)
+- **Jupyter**: Kluyver, T., et al. (2016). Jupyter Notebooks – a publishing format for reproducible computational workflows. In F. Loizides & B. Schmidt (Eds.), Positioning and Power in Academic Publishing: Players, Agents and Agendas (pp. 87-90). IOS Press. [https://doi.org/10.3233/978-1-61499-649-1-87](https://doi.org/10.3233/978-1-61499-649-1-87)
+- **Snakemake**: Köster, J., & Rahmann, S. (2012). Snakemake—a scalable bioinformatics workflow engine. Bioinformatics, 28(19), 2520-2522. [https://doi.org/10.1093/bioinformatics/bts480](https://doi.org/10.1093/bioinformatics/bts480)
 
