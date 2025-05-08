@@ -33,7 +33,6 @@ We performs a basic data cleaning in datawrangling.ipynb: it coerces numeric typ
 
 This dataset sourced via NOAA’s “Climate at a Glance” interface and downloaded through scripts/weatherdatascraper.py, this CSV distils sprawling meteorological archives into a compact panel of annual climate signals. Each observation represents one calendar year of globally averaged conditions, giving just 14 tidy rows—ideal for high‑level correlation with season‑aggregated F1 metrics. The headline feature, temperature_anomaly, expresses the departure (in °C) from the 20th‑century baseline, allowing you to trace the recent acceleration of warming with a single column. A companion measure, yearly_precipitation, records total global land‑and‑ocean precipitation (mm) and lets you test hypotheses about grip levels or race interruptions on especially wet seasons. These two variables are intentionally minimalist: they act as macro “climate mood” factors rather than local track‑day forecasts, so they pair cleanly with Formula 1 data that is itself aggregated over a season.
 
-## 5. Findings from Formula 1 Data Analysis and Visualization 
 
 # 5. Findings from Formula 1 Data Analysis and Visualization 
 
