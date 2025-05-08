@@ -33,7 +33,20 @@ We performs a basic data cleaning in datawrangling.ipynb: it coerces numeric typ
 
 This dataset sourced via NOAA’s “Climate at a Glance” interface and downloaded through scripts/weatherdatascraper.py, this CSV distils sprawling meteorological archives into a compact panel of annual climate signals. Each observation represents one calendar year of globally averaged conditions, giving just 14 tidy rows—ideal for high‑level correlation with season‑aggregated F1 metrics. The headline feature, temperature_anomaly, expresses the departure (in °C) from the 20th‑century baseline, allowing you to trace the recent acceleration of warming with a single column. A companion measure, yearly_precipitation, records total global land‑and‑ocean precipitation (mm) and lets you test hypotheses about grip levels or race interruptions on especially wet seasons. These two variables are intentionally minimalist: they act as macro “climate mood” factors rather than local track‑day forecasts, so they pair cleanly with Formula 1 data that is itself aggregated over a season.
 
-## 5. Findings
+## 5. Findings from Formula 1 Data Analysis and Visualization 
+
+One of the most striking findings from the visualizations is the dominance of a few constructors over the past decade. A bar chart of winning counts by constructor, colored with a vibrant colormap for clarity, reveals that Mercedes and Red Bull have been the most successful teams. For example, Mercedes leads with over 100 race wins, followed by Red Bull with around 80 wins. Other constructors, such as Ferrari and McLaren, have significantly fewer victories, highlighting a competitive imbalance in the sport. This visualization not only makes the disparity clear but also allows for quick identification of periods of dominance and the relative performance of mid-field teams.
+
+Numeric Results that I find:
+Constructor Wins: Mercedes (100+), Red Bull (80+), Ferrari (30+), McLaren (20+)
+
+Top Drivers: Lewis Hamilton (80+ wins), Max Verstappen (40+ wins), Sebastian Vettel (30+ wins)
+
+Unique Drivers: Over 70 drivers participated from 2010–2023
+
+Driver Consistency vs Average Position: The higher their average position is, their driving performance are also tend to be more consistant.
+
+Weather Anomalies: Base on the corrlation heatmap,we notice that years with higher temperature/precipitation anomalies showed a slight increase in DNFs.
 
 ## 6. Future Work
 
