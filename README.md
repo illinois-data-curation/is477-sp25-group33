@@ -111,3 +111,16 @@ If you are unable to run the full workflow or want to view the outputs directly:
 #### Notes:
 - Execute the snakefile from the project root.
 - All code, data scraping, cleaning, and analysis steps are automated and reproducible using Snakemake.
+
+## 8. References & Citations
+
+### Data Sources
+- **Ergast Developer API**  
+  Ergast Developer API. Formula 1 data. [https://ergast.com/mrd](https://ergast.com/mrd)  
+  License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+- **NOAA Climate at a Glance**  
+  National Centers for Environmental Information (NCEI), NOAA. Climate at a Glance: Global Time Series. [https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series)  
+  License: U.S. Government Public Domain
+
+
