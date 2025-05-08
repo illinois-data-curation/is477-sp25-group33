@@ -37,7 +37,7 @@ This dataset sourced via NOAA’s “Climate at a Glance” interface and downlo
 
 ## 6. Future Work
 
-##7. Reproducing
+## 7. Reproducing
 
 To reproduce our full analysis pipeline from data acquisition to result visualization, follow the steps below.
 
