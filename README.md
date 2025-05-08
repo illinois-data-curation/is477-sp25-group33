@@ -102,7 +102,7 @@ snakemake --cores 1
 If you are unable to run the full workflow or want to view the outputs directly:
 
 - Access our output visualizations and cleaned data here:  
-  **[Box Folder Link](https://your-box-link-here.com)**
+  **[Box Folder Link](https://uofi.box.com/s/8vnzsggq3bbgo5thvstbglhl2ewfg70r)**
 
 - Save the files to the following locations:
   - Place all `.png` plots in `results/`
