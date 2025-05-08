@@ -32,3 +32,48 @@ We performs a basic data cleaning in datawrangling.ipynb: it coerces numeric typ
 - **License**: U.S. Government Public Data (no restrictions)
 
 This dataset sourced via NOAA’s “Climate at a Glance” interface and downloaded through scripts/weatherdatascraper.py, this CSV distils sprawling meteorological archives into a compact panel of annual climate signals. Each observation represents one calendar year of globally averaged conditions, giving just 14 tidy rows—ideal for high‑level correlation with season‑aggregated F1 metrics. The headline feature, temperature_anomaly, expresses the departure (in °C) from the 20th‑century baseline, allowing you to trace the recent acceleration of warming with a single column. A companion measure, yearly_precipitation, records total global land‑and‑ocean precipitation (mm) and lets you test hypotheses about grip levels or race interruptions on especially wet seasons. These two variables are intentionally minimalist: they act as macro “climate mood” factors rather than local track‑day forecasts, so they pair cleanly with Formula 1 data that is itself aggregated over a season.
+
+## 5. Findings
+
+## 6. Future Work
+
+##7. Reproducing
+
+To reproduce our full analysis pipeline from data acquisition to result visualization, follow the steps below.
+
+#### 1. Clone the repository
+```bash
+git clone https://github.com/illinois-data-curation/is477-sp25-group33.git
+cd is477-sp25-group33
+```
+
+#### 2. Set up the environment
+Install all required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+#### 3. Run the full workflow with Snakemake
+This will:
+- Scrape Formula 1 and climate data using respective APIs
+- Clean and merge the datasets
+- Run the data analysis notebook
+- Generate final visualizations in `results/`
+
+```bash
+snakemake --cores 1
+```
+
+#### 4. Download Output Files (if needed)
+If you are unable to run the full workflow or want to view the outputs directly:
+
+- Access our output visualizations and cleaned data here:  
+  **[Box Folder Link](https://your-box-link-here.com)**
+
+- Save the files to the following locations:
+  - Place all `.png` plots in `results/`
+  - Place cleaned dataset `f1_data_cleaned.csv` in `data/`
+
+#### Notes:
+- Execute the snakefile from the project root.
+- All code, data scraping, cleaning, and analysis steps are automated and reproducible using Snakemake.
