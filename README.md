@@ -1,7 +1,7 @@
 # IS 477 Final Project: Investiage Formula One Winner relationship with Global Climate
-Github Archival Record: Xu, Y., & Zhang, W. (2025). IS477 SP25 Final Project. Zenodo. https://sandbox.zenodo.org/records/215384
+Github Archival Record: Xu, Y., & Zhang, W. (2025). IS477 SP25 Final Project. Zenodo. https://doi.org/10.5281/zenodo.15368282
 
-[![DOI](https://sandbox.zenodo.org/badge/DOI/10.5072/zenodo.215384.svg)](https://handle.stage.datacite.org/10.5072/zenodo.215384)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15368282.svg)](https://doi.org/10.5281/zenodo.15368282)
 
 
 
