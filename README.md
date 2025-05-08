@@ -46,7 +46,8 @@ Unique Drivers: Over 70 drivers participated from 2010–2023
 
 Driver Consistency vs Average Position: The higher their average position is, their driving performance are also tend to be more consistant.
 
-Weather Anomalies: Base on the corrlation heatmap,we notice that years with higher temperature/precipitation anomalies showed a slight increase in DNFs.
+Weather Anomalies: 
+Base on the corrlation heatmap,we notice that years with higher temperature/precipitation anomalies showed a slight increase in DNFs. By merging weather data with race results, the notebook explores whether years with extreme temperature or precipitation anomalies correspond to changes in race outcomes, such as increased DNFs (Did Not Finish) or shifts in average finishing positions. While the initial analysis does not find a strong direct correlation, it does highlight years where weather extremes coincide with more unpredictable race results, suggesting avenues for deeper investigation.
 
 ## 6. Future Work
 

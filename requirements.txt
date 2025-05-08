@@ -1,5 +1,14 @@
 pandas
-requests
-scikit-learn
 numpy
+scipy
 matplotlib
+seaborn
+scikit-learn
+requests
+jupyter
+notebook
+nbconvert
+ipykernel
+jupyterlab
+snakemake
+
